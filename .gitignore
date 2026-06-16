@@ -1,0 +1,13 @@
+# macOS build output
+macos/build/
+macos/dist/
+.DS_Store
+
+# .NET build output
+windows/bin/
+windows/obj/
+publish/
+*.user
+
+# misc
+*.log

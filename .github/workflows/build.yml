@@ -1,0 +1,58 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  macos:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build .app, .dmg and .pkg
+        run: |
+          chmod +x macos/build.sh macos/package.sh
+          ./macos/package.sh 1.0.0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MotionSick-macOS
+          path: macos/dist/*
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Publish single-file Windows build
+        run: >
+          dotnet publish windows/MotionSick.csproj -c Release -r win-x64
+          --self-contained true
+          -p:PublishSingleFile=true
+          -p:IncludeNativeLibrariesForSelfExtract=true
+          -o publish/win
+      - name: Zip
+        run: Compress-Archive -Path publish/win/* -DestinationPath MotionSick-1.0.0-Windows-x64.zip
+        shell: pwsh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MotionSick-Windows
+          path: MotionSick-1.0.0-Windows-x64.zip
+
+  release:
+    needs: [ macos, windows ]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: artifacts }
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/**/*
