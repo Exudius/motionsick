@@ -1,69 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="420" viewBox="0 0 1300 420" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#1b2a4a"/><stop offset="1" stop-color="#0a0e1a"/>
-  </linearGradient>
-  <linearGradient id="ic" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#1b2a4a"/><stop offset="1" stop-color="#0a0e1a"/>
-  </linearGradient>
-  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-    <feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-  </filter>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2a4a"/><stop offset="1" stop-color="#0a0e1a"/></linearGradient>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
-<rect width="1280" height="440" rx="0" fill="url(#bg)"/>
-<rect x="64" y="120" width="200" height="200" rx="47" fill="url(#ic)" stroke="#2b3c5e" stroke-width="1.5"/>
-<circle cx="104.0" cy="160.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="104.0" cy="280.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="130.0" cy="160.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="130.0" cy="280.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="156.0" cy="160.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="156.0" cy="280.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="182.0" cy="160.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="182.0" cy="280.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="208.0" cy="160.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="208.0" cy="280.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="104.0" cy="160.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="224.0" cy="160.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="104.0" cy="186.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="224.0" cy="186.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="104.0" cy="212.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="224.0" cy="212.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="104.0" cy="238.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="224.0" cy="238.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="104.0" cy="264.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<circle cx="224.0" cy="264.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
-<polyline points="124.0,220.0 126.0,222.3 128.0,224.6 130.0,226.8 132.0,228.8 134.0,230.6 136.0,232.1 138.0,233.4 140.0,234.3 142.0,234.8 144.0,235.0 146.0,234.8 148.0,234.3 150.0,233.4 152.0,232.1 154.0,230.6 156.0,228.8 158.0,226.8 160.0,224.6 162.0,222.3 164.0,220.0 166.0,217.7 168.0,215.4 170.0,213.2 172.0,211.2 174.0,209.4 176.0,207.9 178.0,206.6 180.0,205.7 182.0,205.2 184.0,205.0 186.0,205.2 188.0,205.7 190.0,206.6 192.0,207.9 194.0,209.4 196.0,211.2 198.0,213.2 200.0,215.4 202.0,217.7 204.0,220.0" fill="none" stroke="#ffcc6b" stroke-width="7.0" stroke-linecap="round"/>
-<text x="300" y="190" fill="#ffffff" font-size="68" font-weight="700">MotionSick</text>
-<text x="304" y="238" fill="#9fb0c8" font-size="26">Peripheral motion cues that ease motion sickness</text>
-<text x="304" y="278" fill="#ffcc6b" font-size="20" font-weight="600">free · open-source · macOS &amp; Windows · works with or without sensors</text>
-<rect x="824" y="96" width="392" height="248" rx="22" fill="#0c111d" stroke="#243248" stroke-width="2"/>
-<circle cx="872.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="872.0" cy="315.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="912.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="912.0" cy="315.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="952.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="952.0" cy="315.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="992.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="992.0" cy="315.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1032.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1032.0" cy="315.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1072.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1072.0" cy="315.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1112.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1112.0" cy="315.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1152.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1152.0" cy="315.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1192.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1192.0" cy="315.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="872.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1196.0" cy="135.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="872.0" cy="175.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1196.0" cy="175.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="872.0" cy="215.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1196.0" cy="215.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="872.0" cy="255.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1196.0" cy="255.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="872.0" cy="295.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<circle cx="1196.0" cy="295.6" r="6.5" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
-<text x="1020" y="226" fill="#3a4a66" font-size="20" text-anchor="middle">your screen</text>
+<rect width="1300" height="420" fill="url(#bg)"/>
+<rect x="72" y="108" width="200" height="200" rx="47" fill="#0c1120" stroke="#2b3c5e" stroke-width="1.5"/>
+<circle cx="112.0" cy="148.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="112.0" cy="268.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="138.0" cy="148.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="138.0" cy="268.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="164.0" cy="148.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="164.0" cy="268.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="190.0" cy="148.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="190.0" cy="268.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="216.0" cy="148.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="216.0" cy="268.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="112.0" cy="148.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="232.0" cy="148.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="112.0" cy="174.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="232.0" cy="174.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="112.0" cy="200.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="232.0" cy="200.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="112.0" cy="226.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="232.0" cy="226.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="112.0" cy="252.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<circle cx="232.0" cy="252.0" r="5.2" fill="#ffcc6b" filter="url(#glow)"/>
+<polyline points="132.0,208.0 134.0,210.3 136.0,212.6 138.0,214.8 140.0,216.8 142.0,218.6 144.0,220.1 146.0,221.4 148.0,222.3 150.0,222.8 152.0,223.0 154.0,222.8 156.0,222.3 158.0,221.4 160.0,220.1 162.0,218.6 164.0,216.8 166.0,214.8 168.0,212.6 170.0,210.3 172.0,208.0 174.0,205.7 176.0,203.4 178.0,201.2 180.0,199.2 182.0,197.4 184.0,195.9 186.0,194.6 188.0,193.7 190.0,193.2 192.0,193.0 194.0,193.2 196.0,193.7 198.0,194.6 200.0,195.9 202.0,197.4 204.0,199.2 206.0,201.2 208.0,203.4 210.0,205.7 212.0,208.0" fill="none" stroke="#ffcc6b" stroke-width="7.0" stroke-linecap="round"/>
+<text x="312" y="190" fill="#ffffff" font-size="66" font-weight="700">MotionSick</text>
+<text x="316" y="236" fill="#9fb0c8" font-size="23">Peripheral motion cues that ease motion sickness</text>
+<text x="316" y="274" fill="#ffcc6b" font-size="18" font-weight="600">free &#183; open-source &#183; macOS &amp; Windows</text>
+<rect x="988" y="104" width="236" height="212" rx="20" fill="#0c111d" stroke="#243248" stroke-width="2"/>
+<circle cx="1030.0" cy="138.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1030.0" cy="290.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1068.0" cy="138.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1068.0" cy="290.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1106.0" cy="138.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1106.0" cy="290.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1144.0" cy="138.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1144.0" cy="290.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1182.0" cy="138.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1182.0" cy="290.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1030.0" cy="138.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1206.0" cy="138.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1030.0" cy="176.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1206.0" cy="176.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1030.0" cy="214.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1206.0" cy="214.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1030.0" cy="252.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1206.0" cy="252.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1030.0" cy="290.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<circle cx="1206.0" cy="290.8" r="6" fill="#ffcc6b" opacity="0.9" filter="url(#glow)"/>
+<text x="1106" y="216" fill="#3a4a66" font-size="18" text-anchor="middle">your screen</text>
 </svg>

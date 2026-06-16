@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Hardened Runtime entitlements required for notarization.
+         The camera entitlement lets the notarized, hardened build use the
+         optical-flow source; everything else stays locked down. -->
+    <key>com.apple.security.device.camera</key>
+    <true/>
+</dict>
+</plist>

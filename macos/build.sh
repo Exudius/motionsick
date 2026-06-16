@@ -33,8 +33,17 @@ else
 fi
 rm -f "$ARM"
 
-# Ad-hoc codesign so the overlay/menu-bar app launches without Gatekeeper fuss.
-codesign --force --deep --sign - "$APP" 2>/dev/null || true
+# Codesign. With a real Developer ID (CODESIGN_IDENTITY env) we sign with the
+# Hardened Runtime + entitlements so the build can be notarized; otherwise we
+# fall back to an ad-hoc signature so the local build still launches.
+ENTITLEMENTS="$ROOT/MotionSick.entitlements"
+if [ -n "$CODESIGN_IDENTITY" ]; then
+    echo "→ Signing with Developer ID: $CODESIGN_IDENTITY"
+    codesign --force --deep --options runtime --timestamp \
+        --entitlements "$ENTITLEMENTS" --sign "$CODESIGN_IDENTITY" "$APP"
+else
+    codesign --force --deep --sign - "$APP" 2>/dev/null || true
+fi
 
 echo "✓ Built $APP"
 lipo -info "$BIN" 2>/dev/null || true

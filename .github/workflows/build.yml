@@ -14,10 +14,31 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
-      - name: Build .app, .dmg and .pkg
+      - name: Build (sign + notarize when secrets are present)
+        env:
+          MACOS_CERT_P12: ${{ secrets.MACOS_CERT_P12 }}
+          MACOS_CERT_PASSWORD: ${{ secrets.MACOS_CERT_PASSWORD }}
+          CODESIGN_IDENTITY: ${{ secrets.MACOS_IDENTITY }}
+          NOTARY_APPLE_ID: ${{ secrets.MACOS_NOTARY_APPLE_ID }}
+          NOTARY_TEAM_ID: ${{ secrets.MACOS_TEAM_ID }}
+          NOTARY_PASSWORD: ${{ secrets.MACOS_NOTARY_PASSWORD }}
         run: |
-          chmod +x macos/build.sh macos/package.sh
-          ./macos/package.sh 1.0.0
+          chmod +x macos/*.sh
+          if [ -n "$CODESIGN_IDENTITY" ] && [ -n "$MACOS_CERT_P12" ]; then
+            echo "🔐 Signing + notarizing"
+            echo "$MACOS_CERT_P12" | base64 --decode > /tmp/cert.p12
+            security create-keychain -p actions build.keychain
+            security default-keychain -s build.keychain
+            security unlock-keychain -p actions build.keychain
+            security import /tmp/cert.p12 -k build.keychain -P "$MACOS_CERT_PASSWORD" -T /usr/bin/codesign
+            security set-key-partition-list -S apple-tool:,apple: -s -k actions build.keychain >/dev/null
+            xcrun notarytool store-credentials motionsick-notary \
+              --apple-id "$NOTARY_APPLE_ID" --team-id "$NOTARY_TEAM_ID" --password "$NOTARY_PASSWORD"
+            NOTARY_PROFILE=motionsick-notary ./macos/sign-and-notarize.sh 1.0.0
+          else
+            echo "ℹ️  No signing secrets — building unsigned"
+            ./macos/package.sh 1.0.0
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: MotionSick-macOS
@@ -37,6 +58,23 @@ jobs:
           -p:PublishSingleFile=true
           -p:IncludeNativeLibrariesForSelfExtract=true
           -o publish/win
+      - name: Sign (when a code-signing cert is present)
+        shell: pwsh
+        env:
+          WINDOWS_CERT_PFX: ${{ secrets.WINDOWS_CERT_PFX }}
+          WINDOWS_CERT_PASSWORD: ${{ secrets.WINDOWS_CERT_PASSWORD }}
+        run: |
+          if ($env:WINDOWS_CERT_PFX) {
+            Write-Host "🔐 Signing MotionSick.exe"
+            $pfx = Join-Path $env:RUNNER_TEMP "cert.pfx"
+            [IO.File]::WriteAllBytes($pfx, [Convert]::FromBase64String($env:WINDOWS_CERT_PFX))
+            $sdk = Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin" -Recurse -Filter signtool.exe |
+                   Where-Object { $_.FullName -like "*x64*" } | Select-Object -Last 1
+            & $sdk.FullName sign /f $pfx /p $env:WINDOWS_CERT_PASSWORD /fd SHA256 `
+              /tr http://timestamp.digicert.com /td SHA256 "publish/win/MotionSick.exe"
+          } else {
+            Write-Host "ℹ️  No Windows cert — unsigned"
+          }
       - name: Zip
         run: Compress-Archive -Path publish/win/* -DestinationPath MotionSick-1.0.0-Windows-x64.zip
         shell: pwsh

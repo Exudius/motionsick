@@ -59,13 +59,21 @@ Grab the latest build from **[Releases](../../releases/latest)**.
 ### macOS (11+ Apple Silicon & Intel, universal)
 - **`.dmg`** — open it and drag **MotionSick** to Applications.
 - **`.pkg`** — double-click to install.
-- First launch: right-click the app → **Open** (it's free & unsigned), then look
-  for the 〰️ icon in the menu bar.
+- **First launch** (free & unsigned build): right-click the app → **Open**, then
+  confirm. Look for the 〰️ icon in the menu bar. If macOS still blocks it:
+  ```bash
+  xattr -dr com.apple.quarantine /Applications/MotionSick.app
+  ```
 
 ### Windows (10 / 11, x64)
-- Unzip and run **`MotionSick.exe`**. It lives in the system tray.
+- Unzip and run **`MotionSick.exe`** (self-contained — no .NET needed). It lives
+  in the system tray.
+- On the unsigned build SmartScreen may warn: **More info → Run anyway**.
 - The real **tilt/accelerometer** works on laptops/tablets/convertibles that have
   a motion sensor; otherwise it falls back to mouse/scroll cues.
+
+> Releases are signed & notarized automatically once the maintainer adds signing
+> certificates — see [docs/SIGNING.md](docs/SIGNING.md).
 
 ## How the sensor logic works
 
