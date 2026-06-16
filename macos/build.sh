@@ -12,6 +12,9 @@ FRAMEWORKS=(-framework AppKit -framework IOKit -framework AVFoundation -framewor
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$ROOT/Info.plist" "$APP/Contents/Info.plist"
+# App icon (generated in ../assets).
+ICON="$ROOT/../assets/AppIcon.icns"
+[ -f "$ICON" ] && cp "$ICON" "$APP/Contents/Resources/AppIcon.icns"
 
 BIN="$APP/Contents/MacOS/MotionSick"
 ARM="$ROOT/build/.motionsick-arm64"

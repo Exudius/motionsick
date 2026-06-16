@@ -1,29 +1,32 @@
 <div align="center">
 
-# 〰️ MotionSick
+<img src="assets/hero.svg" alt="MotionSick" width="100%" />
 
-### Peripheral motion cues that ease motion sickness — for **macOS** and **Windows**
+<br/>
 
-A tiny menu-bar / tray app that paints subtle, physics-driven dots around the
-edges of your screen. They glide with the real motion you feel — vehicle
-acceleration, tilt, scrolling — giving your eyes a peripheral signal that
-**matches your inner ear**, the same principle behind Apple's *Vehicle Motion
-Cues*, but cross-platform and fully configurable.
-
-> **Free & open-source, for everyone.** Apple's motion cues need a brand-new OS
-> and a device with the right sensors. MotionSick works on **any Mac (old or
-> new) and Windows PC** — *with or without* a motion sensor: where a sensor
-> exists it's used, and where it doesn't, the camera and scroll/pointer cues
-> still help. Nobody should be stuck feeling sick just because their hardware is
-> a few years old.
+**Peripheral motion cues that ease motion sickness — the idea behind Apple's _Vehicle Motion Cues_, but cross-platform, configurable, and free.**
 
 [![Download](https://img.shields.io/badge/⬇_Download-Latest_Release-2ea44f?style=for-the-badge)](../../releases/latest)
 [![Build](https://img.shields.io/github/actions/workflow/status/Exudius/motionsick/build.yml?style=for-the-badge)](../../actions)
+[![Platforms](https://img.shields.io/badge/macOS_·_Windows-0a0e1a?style=for-the-badge&logo=apple&logoColor=white)](../../releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
 [![ko-fi](https://img.shields.io/badge/Support_me_on-Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/technik_dev)
 
 </div>
+
+---
+
+A tiny menu-bar / tray app that paints subtle, physics-driven dots around the
+edges of your screen. They glide with the real motion you feel — vehicle
+acceleration, tilt, scrolling — giving your eyes a peripheral signal that
+**matches your inner ear**.
+
+> 💙 **Free & open-source, for everyone.** Apple's motion cues need a brand-new
+> OS and a device with the right sensors. MotionSick works on **any Mac (old or
+> new) and Windows PC** — *with or without* a motion sensor: where a sensor
+> exists it's used, and where it doesn't, the camera and scroll/pointer cues
+> still help. Nobody should feel sick just because their hardware is a few years old.
 
 ---
 

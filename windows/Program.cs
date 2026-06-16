@@ -46,9 +46,21 @@ namespace MotionSick
 
         private static void BuildTray()
         {
+            Icon trayIcon = SystemIcons.Application;
+            try
+            {
+                string exe = System.Diagnostics.Process.GetCurrentProcess().MainModule?.FileName;
+                if (!string.IsNullOrEmpty(exe))
+                {
+                    var extracted = Icon.ExtractAssociatedIcon(exe);
+                    if (extracted != null) trayIcon = extracted;
+                }
+            }
+            catch { }
+
             _tray = new NotifyIcon
             {
-                Icon = SystemIcons.Application,
+                Icon = trayIcon,
                 Visible = true,
                 Text = "MotionSick"
             };
